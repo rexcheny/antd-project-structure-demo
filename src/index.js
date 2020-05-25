@@ -8,7 +8,8 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom
   通常直接看到一个登录页面。如果我们以后还需要一些不登录就需要访问的页面，其实是都放到mainRouter中的
   所以这里要引入mainRouter。
 */
-import { mainRouter} from "./routes";
+import { mainRoutes } from "./routes";
+import './index.less'  // 引入自定义的less
 
 // 如果要让antd组件显示中文就需要引入下面的包，并在顶层做包裹。
 import zhCN from 'antd/es/locale/zh_CN';
@@ -30,7 +31,7 @@ ReactDOM.render(
                 {/* 下面的 {} 表示里面是JS代码，标签里面嵌套JS就是JSX */}
                 {
                     // 这里是为了遍历mainRouter数组，生成一条条路由，因为这里的路由都不需要登录认证
-                    mainRouter.map(route => {
+                    mainRoutes.map(route => {
                         return <Route key={route.pathname} path={route.pathname} component={route.component}/>
                     })
                 }

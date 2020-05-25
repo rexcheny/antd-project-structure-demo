@@ -12,8 +12,11 @@ const {
     addDecoratorsLegacy
 } = require('customize-cra');
 
-// 导入主题颜色设置
+// 导入antd默认主题颜色设置
 const theme = require('./theme');
+
+// 导入阿里云控制台主题
+const aliyunTheme = require('@ant-design/aliyun-theme');
 
 module.exports = override(
     fixBabelImports('antd', {
@@ -23,6 +26,6 @@ module.exports = override(
     addDecoratorsLegacy(),
     addLessLoader({
         javascriptEnabled: true,
-        modifyVars: theme,
+        modifyVars: aliyunTheme,  // 这里来切换主题
     }),
 );
