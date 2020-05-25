@@ -1,7 +1,7 @@
 // 这里配置主题颜色，这个文件名称自定义。另外这里还可以自己以后要使用的自定义样式
 
 module.exports = {
-    '@primary-color': '#1890ff',                          // 全局主色
+    '@primary-color': '#1890ff',                          // 全局主色 蓝色  绿色 #1DA57A
     '@link-color': '#1890ff',                             // 链接色
     '@success-color': '#52c41a',                          // 成功色
     '@warning-color': '#faad14',                          // 警告色

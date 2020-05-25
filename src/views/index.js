@@ -23,9 +23,10 @@ import { Loading } from "../components";
 
 // 下面页面都用Loadable包裹了一次，为了实现路由懒加载
 // 这个 Loadable 是react-loadable 的一个函数，它需要一个对象做参数，对象里面有2个值
+// 这个懒加载的原理就是同步显示 Loading 组件，当这个组件加载完毕后调用 loader 对应的函数
 const Dashboard = Loadable({
     loader: () => import('./Dashboard'),  // 这个loader 是一个匿名函数，函数是真正要去加载的组件，你从后面的import就可以看出来
-    loading: Loading  // 这个是在组件没有加载完成之前要显示的组件
+    loading: Loading  // 这个是在组件没有加载完成之前要显示的组件，这个组件通常比较小，且这个组件的显示是同步的
 });
 
 const Login = Loadable({

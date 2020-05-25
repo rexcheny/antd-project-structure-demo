@@ -17,15 +17,17 @@ import {
     <Route path='' component='' /> 这样的，为了便于识别，我们这里把键叫做 pathname和component。
 */
 
-export const mainRouter = [
+export const mainRoutes = [
     {pathname: '/login', component: Login},
     {pathname: '/404.html', component: NotFound},  // 虽然这里是 404.html 实际上它并不是HTML页面，只是路由这样显示
 ];
 
-export const adminRouter = [
-    {pathname: '/admin/dashboard', component: Dashboard},
-    {pathname: '/admin/settings', component: Settings},
+export const adminRoutes = [
+    {pathname: '/admin/dashboard', component: Dashboard, title: '仪表盘', isNav: true, icon: 'dashboard'},
+
     // 这里为什么要配置 exact: true 呢，因为/admin/articlelist和/admin/article/edit/:id前半部分一样，这样的URL需要为短的那个配置 exact: true 精确匹配
-    {pathname: '/admin/article', component: ArticleList, exact: true},
-    {pathname: '/admin/article/edit/:id', component: ArticleEdit},
+    {pathname: '/admin/article', component: ArticleList, exact: true, title: '文章管理', isNav: true, icon: 'unorderedList'},
+    {pathname: '/admin/article/edit/:id', component: ArticleEdit, title: '文章编辑'},
+
+    {pathname: '/admin/settings', component: Settings, title: '设置', isNav: true, icon: 'setting'},
 ];
