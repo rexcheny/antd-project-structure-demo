@@ -144,6 +144,7 @@ module.exports = override(
 
 安装完成后，需要自定义一个加载组件，这个就是components里面的Loading中的index.js。另外就需要做被路由页面的一层包装，这个参照views里面的index.js
 
+
 ### 使用Ajax请求
 
 `npm install axios -S `
@@ -151,4 +152,3 @@ module.exports = override(
 ### 时间格式化
 
 `npm install moment -S`
-

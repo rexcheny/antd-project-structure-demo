@@ -70,7 +70,9 @@ class ArticleList extends Component {
             dataSource: [],
             columns: [],
             total: 0,
-            isLoading: false  // 用于控制table的加载状态显示
+            isLoading: false,  // 用于控制table的加载状态显示
+            offset: 0,       // 第几页
+            limited: 10,     // 每页显示几条数据
         }
     }
 
@@ -136,7 +138,7 @@ class ArticleList extends Component {
         this.setState({
             isLoading: true  // AJAX之前设置为 true，表示正在加载
         });
-        getArticles().then(resp => {
+        getArticles(this.state.offset, this.state.lime).then(resp => {
             // Object.keys 获取一个对象的键，生成一个列表 resp.list是一个列表，里面是字典，意思是取列表中第一个字典的
             // 所有KEY，生成一个列表
             const columnKeys = Object.keys(resp.list[0]);
